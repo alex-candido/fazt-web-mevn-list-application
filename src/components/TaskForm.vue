@@ -1,11 +1,30 @@
 <template>
-  <form @submit.prevent="saveTask()" >
-    <input type="text" placeholder="Write a title" v-model="task.title">
-
-    <textarea rows="3" placeholder="Write a description" v-model="task.description"></textarea>
-
-    <button>Save</button>
-  </form>
+  <div class="col-md-4 offset-4">
+    <div class="card card-body">
+      <h1 class="card-title my-3 text-center">Create a Task</h1>
+      <form @submit.prevent="saveTask()" >
+        <input
+          class="form-control mb-3"
+          placeholder="Write a title"
+          type="title"
+          v-model="task.title"
+          autofocus
+        />
+        <textarea
+          class="form-control mb-3"
+          placeholder="Write a Description"
+          rows="3"
+          v-model="task.description"
+        ></textarea>
+        <button
+          class="btn btn-primary w-100"
+          :disabled="!task.title || !task.description"
+        >
+          save
+        </button>
+      </form>
+    </div>
+  </div>    
 </template>
 
 <script lang="ts">

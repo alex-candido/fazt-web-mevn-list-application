@@ -1,10 +1,13 @@
 <template>
-  <ul>
+  <ul class="list-group">
     <li 
+      class="list-group-item list-group-item-action p-4"
+      style="cursor: pointer;"
       v-for="(task, index) in tasks"
       :key="index"
       @click="$router.push({path: `/tasks/${task._id}`})"
     >
+      {{ index + 1 }}.
       {{ task.title }}
     </li>
   </ul>
