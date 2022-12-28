@@ -10,9 +10,9 @@ router.get("/tasks", async (req, res) => {
 
 router.post("/tasks", async (req, res) => {
   const { title, description } = req.body;
-  const task = new Task({title, description})
-  await task.save();
-  res.send("creating tasks!")
+  const newTask = new Task({ title, description });
+  const savedTask = await newTask.save();
+  res.json(savedTask);
 })
 
 router.get("/tasks/:id", async (req, res) => {
