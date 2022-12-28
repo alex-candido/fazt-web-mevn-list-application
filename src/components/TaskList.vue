@@ -1,8 +1,9 @@
 <template>
   <ul>
     <li 
-    v-for="(task, index) in tasks"
-    :key="index"
+      v-for="(task, index) in tasks"
+      :key="index"
+      @click="$router.push({path: `/tasks/${task._id}`})"
     >
       {{ task.title }}
     </li>
@@ -24,6 +25,7 @@ export default defineComponent({
     async loadtasks() {
       const res = await getTasks();
       this.tasks = res.data;
+      console.log(res.data)
     }
   },
   mounted() {

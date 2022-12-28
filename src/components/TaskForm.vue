@@ -24,6 +24,7 @@ import { createTask } from '../services/TaskService';
         try {
           const res = await createTask(this.task);
           console.log(res);
+          this.$router.push({ name: "tasks"})
         } catch (error) {
           console.error(error);
         }
