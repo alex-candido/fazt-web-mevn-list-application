@@ -13,7 +13,7 @@ exports.startConnection = void 0;
 const mongoose_1 = require("mongoose");
 const startConnection = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const db = yield (0, mongoose_1.connect)("mongodb+srv://mevn:mevn123@cluster0.k1xui7n.mongodb.net/Task?retryWrites=true&w=majority");
+        const db = yield (0, mongoose_1.connect)(`mongodb+srv://mevn:${process.env.DB_PASS}@cluster0.k1xui7n.mongodb.net/Task?retryWrites=true&w=majority`);
         console.log(db.connection.name);
     }
     catch (error) {

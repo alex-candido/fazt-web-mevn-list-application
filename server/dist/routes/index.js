@@ -21,9 +21,9 @@ router.get("/tasks", (req, res) => __awaiter(void 0, void 0, void 0, function* (
 }));
 router.post("/tasks", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { title, description } = req.body;
-    const task = new Task_1.default({ title, description });
-    yield task.save();
-    res.send("creating tasks!");
+    const newTask = new Task_1.default({ title, description });
+    const savedTask = yield newTask.save();
+    res.json(savedTask);
 }));
 router.get("/tasks/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
