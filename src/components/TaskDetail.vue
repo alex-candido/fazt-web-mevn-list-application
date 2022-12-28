@@ -1,15 +1,26 @@
 <template>
-  <h1>Task detail</h1>
+ <div class="col-md-4 offset-md-4">
+  <form @submit.prevent="handleUpdate()" class="card card-body">
+      <h1 class="card-title my-3 text-center">Update a Task</h1>
 
-  <form @submit.prevent="handleUpdate()">
-    <input type="text" v-model="currentTask.title">
+      <input
+        type="text"
+        v-model="currentTask.title"
+        class="form-control mb-3"
+      />
 
-    <textarea rows="3" v-model="currentTask.description"></textarea>
+      <textarea
+        v-model="currentTask.description"
+        class="form-control mb-3"
+      ></textarea>
 
-    <button>Update</button>
-  </form>
+      <button class="btn btn-primary">Update</button>
+    </form>
 
-  <button v-on:click="handleDelete()" >Delete</button>
+    <div class="text-center">
+      <button @click="handleDelete()" class="btn btn-danger my-4">delete</button>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
