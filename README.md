@@ -79,6 +79,6 @@ $ npm run serve
 $ npm run dev
 ```
 
-<img src="/src/assets/page-home.png" alt="Home">
+<img src="/src/assets/home.png" alt="Home">
 <img src="/src/assets/create.png" alt="Create">
 <img src="/src/assets/edit.png" alt="Edit">
